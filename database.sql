@@ -5,8 +5,8 @@ CREATE TABLE partidos (
   equipo_local varchar(30) NOT NULL,
   equipo_visitante varchar(30) NOT NULL,
   fecha timestamp NOT NULL,
-  goles_local int NULL,
-  goles_visitante int NULL,
+  goles_local int NOT NULL,
+  goles_visitante int NOT NULL,
   fase enum('Fase de grupos','Dieciseisavos de Final','Octavos de Final','Cuartos de Final','Semifinal','Final') NOT NULL,
   PRIMARY KEY (`id_partido`)
 );
