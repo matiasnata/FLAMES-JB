@@ -75,11 +75,10 @@ def obtener_partido(id):
 
         query = """
         SELECT p.id_partido, p.equipo_local, p.equipo_visitante, p.fecha, p.fase,
-               r.goles_local, r.goles_visitante
+               p.goles_local, p.goles_visitante
         FROM partidos p
         WHERE p.id_partido = %s
         """
-        # uso LEFT JOIN con resultados, asi si el partido tiene resultado lo incluye
         # si no tiene resultado, los campos de goles van a venir como null, pero igual devuelve el partido
         cursor.execute(query, (id,))
         partido = cursor.fetchone() # fetchone porque busco uno solo por id
